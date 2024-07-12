@@ -5,6 +5,7 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'mvn clean test'
+                echo 'değişiklik'
             }
         }
     }
