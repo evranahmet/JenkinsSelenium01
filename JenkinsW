@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+
+    tools {
+        maven 'mvn' // Maven'in Jenkins'te "mvn" olarak tanımlandığını varsayıyoruz
+    }
+
+    stages {
+        stage('Build') {
+            steps {
+                script {
+                    def mvnHome = tool name: 'mvn', type: 'maven'
+                    env.PATH = "${mvnHome}\\bin;${env.PATH}"
+                }
+                bat 'mvn --version'
+                bat 'mvn clean test'
+            }
+        }
+    }
+}
+
