@@ -22,7 +22,7 @@ public class FirstClass {
 
         driver.get("https://www.google.com");
         String urlOfThePAge = driver.getCurrentUrl();
-        System.out.println("urlOfThePAge = " + urlOfThePAge);
+        System.out.println("urlOfThePAgee = " + urlOfThePAge);
 
         Assert.assertEquals(urlOfThePAge,expectedUrl);
         driver.close();
